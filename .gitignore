@@ -1,0 +1,8 @@
+*.log
+*.py[cod]
+.DS_Store*
+.hubot_history
+__pycache__
+_builds
+_intermediate
+node_modules

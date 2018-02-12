@@ -1,0 +1,21 @@
+repo: https://github.com/carla-simulator/carla
+build_dir: ../_intermediate
+output_dir: ../_builds
+number_of_builds_to_keep: 6
+
+build:
+  - description: Install
+    command: git clone -b {branch} {repo} .
+    working_dir: "{install_dir}"
+
+  - description: Setup.sh
+    command: /bin/bash Setup.sh
+    working_dir: "{install_dir}"
+
+  - description: Rebuild.sh
+    command: /bin/bash Rebuild.sh --no-editor
+    working_dir: "{install_dir}"
+
+  - description: Package.sh
+    command: /bin/bash Package.sh
+    working_dir: "{install_dir}"
